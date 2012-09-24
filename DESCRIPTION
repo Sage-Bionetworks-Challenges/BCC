@@ -1,0 +1,20 @@
+Package: BCC
+Type: Package
+Title: The BCC package supports the breast cancer competition run by
+        Sage Bionetworks
+Version: 1.0-8
+Date: 2012-07-24
+Author: Adam, Margolin, Nicole Deflaux, Justin Guinney, Ben Sauerwine, Erhan Bilal
+Maintainer: Sage Bionetworks Software Platform Team
+        <platform@sagebase.org>
+Description: Convenience functions for loading competition data and submitting
+    models.
+License: file LICENSE
+LazyLoad: no
+Depends: R(>= 2.14.0), predictiveModeling, synapseClient, survival,
+        survcomp, methods, sessionTools
+LazyData: yes
+Collate: 'DemoModel.R' 'evaluateMetabricModelFromCode.R'
+        'loadMetabricTestData.R' 'loadMetabricTrainingData.R'
+        'submitCompetitionModel.R'
+Packaged: 2012-09-20 19:18:16 UTC; sagebio

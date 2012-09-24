@@ -1,0 +1,82 @@
+\documentclass[10pt]{article}
+
+\usepackage{times}
+\usepackage{hyperref}
+\usepackage{float}
+
+\textwidth=6.5in
+\textheight=8.5in
+\oddsidemargin=-.1in
+\evensidemargin=-.1in
+\headheight=-.3in
+
+\newcommand{\Rfunction}[1]{{\texttt{#1}}}
+\newcommand{\Robject}[1]{{\texttt{#1}}}
+\newcommand{\Rpackage}[1]{{\textit{#1}}}
+\newcommand{\Rmethod}[1]{{\texttt{#1}}}
+\newcommand{\Rfunarg}[1]{{\texttt{#1}}}
+\newcommand{\Rclass}[1]{{\textit{#1}}}
+\newcommand{\Rcode}[1]{{\texttt{#1}}}
+\newcommand{\software}[1]{\textsf{#1}}
+\newcommand{\R}{\software{R}}
+\newcommand{\predictiveModeling}{\Rpackage{predictiveModeling}}
+\newcommand{\synapseClient}{\Rpackage{synapseClient}}
+
+\title{Building and submitting predictive models for the breast cancer prognosis challenge}
+\author{Erhan Bilal}
+\date{\today}
+
+
+
+\usepackage{Sweave}
+\begin{document}
+\input{metabricCompetitionDemo-concordance}
+
+\maketitle
+
+\section{Load required libraries}
+\begin{Schunk}
+\begin{Sinput}
+> library(predictiveModeling)
+\end{Sinput}
+\begin{Soutput}
+randomSurvivalForest 3.6.3
+
+Type rsf.news() to see new features, changes, and bug fixes.
+\end{Soutput}
+\begin{Sinput}
+> library(BCC)
+> library(survival)
+> library(survcomp)
+> library(MASS)
+\end{Sinput}
+\end{Schunk}
+
+\section{Load training data}
+\begin{Schunk}
+\begin{Sinput}
+> ## Before downloading data from the R client you must sign the terms of use through the web client.
+> ## This is done by attempting to download any dataset included in the competition and agreeing to the terms of use.
+> ## For example, clicking the "Download" link at https://synapse.sagebase.org/\#Synapse:syn375502 will bring up
+> ## the terms of use dialogue if you have not already agreed to them.
+> 
+> # synapseLogin() ### not required if configured for automatic login
+> trainingData <- loadMetabricTrainingData()
+\end{Sinput}
+\end{Schunk}
+
+\section{Create custom predictive model}
+A predicitve model for the competition is implemented as an R5 class that implements the methods customTrain() and customPredict(). We recommend defining this class in a separate file with the same name as the class name. For an example, see DemoModel.R in the BCC package source code (file BCC/R/DemoModel.R).
+
+The customTrain() method should take arguments exprData (an ExpressionSet), copyData (an ExpressionSet), clinicalFeaturesData (a data.frame), and clinicalSurvData (a Surv object). It is the user's responsibility to pre-process and combine these data as needed for the model. The predictiveModeling package provides some convenience functions to do so, such as createAggregateFeaturesDataSet().
+
+The customPredict() method will be run on the validation dataset, in the same format as the training data, so this method should take arguments exprData (an ExpressionSet), copyData (an ExpressionSet), and clinicalFeaturesData (a data.frame). Again it is the user's responsibility to pre-process and combine these data as needed for their model.
+
+Both the customTrain() and customPredict() method may choose to use only subsets of the input arguments, and may incorporate any additional datasets. A recommended practice is to store additional data in Synapse in the user's custom project and load the data from Syanpse within customTrain() or customPredict() using the loadEntity() function. The user may also add additional data directly to the R5 class as additional fields.
+
+\section{Train the model}
+
+\begin{Schunk}
+\begin{Sinput}
+> modelClassFile <- "~/BCC/R/DemoModel.R"
+> source(modelClassFile)
