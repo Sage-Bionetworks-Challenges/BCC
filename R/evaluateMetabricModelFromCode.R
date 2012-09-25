@@ -33,11 +33,11 @@ evaluateMetabricModelFromCode <- function(submittedModelId, trainingData=NULL, t
   
   trainPredictions <- trainedModel$customPredict(trainingData$exprData, trainingData$copyData, trainingData$clinicalFeaturesData)
   trainPerformance <- SurvivalModelPerformance$new(as.numeric(trainPredictions), trainingData$clinicalSurvData)
-  cIndex_train <- trainPerformance$getConcordanceIndex()$c.index
+  cIndex_train <- trainPerformance$getExactConcordanceIndex()
   
   testPredictions <- trainedModel$customPredict(testData$exprData, testData$copyData, testData$clinicalFeaturesData)
   testPerformance <- SurvivalModelPerformance$new(as.numeric(testPredictions), testData$clinicalSurvData)
-  cIndex_test <- testPerformance$getConcordanceIndex()$c.index
+  cIndex_test <- testPerformance$getExactConcordanceIndex()
   
   print(propertyValue(submittedModelLayer, "name"))
   print(paste("train concordance.index =", cIndex_train))

@@ -23,7 +23,7 @@
 \newcommand{\synapseClient}{\Rpackage{synapseClient}}
 
 \title{Building and submitting predictive models for the breast cancer prognosis challenge}
-\author{Erhan Bilal}
+\author{Erhan Bilal, Erich Huang, Adam Margolin}
 \date{\today}
 
 \SweaveOpts{keep.source=TRUE}
