@@ -2,8 +2,8 @@ Package: BCC
 Type: Package
 Title: The BCC package supports the breast cancer competition run by
         Sage Bionetworks
-Version: 1.0-8
-Date: 2012-07-24
+Version: 1.0-9
+Date: 2012-09-25
 Author: Adam, Margolin, Nicole Deflaux, Justin Guinney, Ben Sauerwine, Erhan Bilal
 Maintainer: Sage Bionetworks Software Platform Team
         <platform@sagebase.org>
