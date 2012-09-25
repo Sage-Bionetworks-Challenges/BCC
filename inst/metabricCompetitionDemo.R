@@ -50,6 +50,12 @@ print(trainPerformance$getExactConcordanceIndex())
 ###################################################
 ### code chunk number 6: runModelOnTestDataset
 ###################################################
+### Note that the test data used here is synthetic 'unit test' clinical, 
+### expression, and copy numnber data that include missing values and aggregate 
+### distributions similar to the real validation data. Obviously, the 
+### predictions generated from these data are meaningless, but they show that 
+### the mechamics of these submissions and testing work.
+
 testData <- loadMetabricTestData(loadSurvData=FALSE)
 testPredictions <- demoPredictiveModel$customPredict(testData$exprData, testData$copyData,
                                                      testData$clinicalFeaturesData)
