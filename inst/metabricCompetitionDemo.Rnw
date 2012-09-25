@@ -23,7 +23,7 @@
 \newcommand{\synapseClient}{\Rpackage{synapseClient}}
 
 \title{Building and submitting predictive models for the breast cancer prognosis challenge}
-\author{Erhan Bilal, Erich Huang, Adam Margolin}
+\author{Erhan Bilal, Adam Margolin}
 \date{\today}
 
 \SweaveOpts{keep.source=TRUE}
@@ -86,7 +86,7 @@ print(trainPerformance$getExactConcordanceIndex())
 @
 
 \section{Test that the model runs successfully on the test dataset}
-A valid model submission will return a vector of predicted hazard ratios in the validation dataset. We therefore provide users access to the validation data used as input to predictive models, including the expression data, copy number data, and clinical covariates. Our evaluation script will call customPredict() on the submitted model with these data as parameters, as shown below, and compare the prediction results to the known survival times from the validation set (which is hidden from users).
+A valid model submission will return a vector of predicted hazard ratios in the validation dataset. We therefore provide users access to synthetic 'Unit Test' data used as input to predictive models, including synthetic expression data, synthetic copy number data, and synthetic clinical covariates. Our evaluation script will call customPredict() on the submitted model with these data as parameters, as shown below, and compare the prediction results to the synthetic survival times from the validation set (which is hidden from users). Obviously, with synthetic data, these predictions won't carry much meaning from a clinical standpoint, but this illustrates the functionalities of the packages.
 
 Run the code below on your predictive model to ensure it returns a valid vector of predictions on the test data.
 
