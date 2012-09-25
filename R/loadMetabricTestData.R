@@ -15,20 +15,20 @@
 loadMetabricTestData <- function(loadSurvData=FALSE){
   metabricTestData <- list()
   
-  idExpressionLayer <- "syn1125623"
+  idExpressionLayer <- "syn1412476"
   expressionLayer <- loadEntity(idExpressionLayer)
   metabricTestData$exprData <- expressionLayer$objects[[1]]
   
-  idCopyLayer <- "syn1125628"
+  idCopyLayer <- "syn1412477"
   copyLayer <- loadEntity(idCopyLayer)
   metabricTestData$copyData <- copyLayer$objects[[1]]
   
-  idClinicalFeaturesLayer <- "syn1201781"
+  idClinicalFeaturesLayer <- "syn1412474"
   clinicalFeaturesLayer <- loadEntity(idClinicalFeaturesLayer)
   metabricTestData$clinicalFeaturesData <- clinicalFeaturesLayer$objects[[1]]
   
   if(loadSurvData){
-    idClinicalSurvLayer <- "syn1125620"
+    idClinicalSurvLayer <- "syn1412475"
     clinicalSurvLayer <- loadEntity(idClinicalSurvLayer)
     metabricTestData$clinicalSurvData <- clinicalSurvLayer$objects[[1]]
   }
