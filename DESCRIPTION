@@ -12,7 +12,7 @@ Description: Convenience functions for loading competition data and submitting
 License: file LICENSE
 LazyLoad: no
 Depends: R(>= 2.14.0), predictiveModeling, synapseClient, survival,
-        survcomp, methods, sessionTools
+        methods, sessionTools
 LazyData: yes
 Collate: 'DemoModel.R' 'evaluateMetabricModelFromCode.R'
         'loadMetabricTestData.R' 'loadMetabricTrainingData.R'
