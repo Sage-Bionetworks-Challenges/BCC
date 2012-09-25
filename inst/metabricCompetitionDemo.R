@@ -6,7 +6,6 @@
 library(predictiveModeling)
 library(BCC)
 library(survival)
-library(survcomp)
 library(MASS)
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.5)  22 SEP 2012 07:20
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.5)  25 SEP 2012 17:02
 entering extended mode
  %&-line parsing enabled.
 **metabricCompetitionDemo.tex
@@ -358,7 +358,7 @@ Overfull \vbox (21.68121pt too high) has occurred while \output is active []
 
 
 [2]
-Overfull \hbox (15.43002pt too wide) in paragraph at lines 146--147
+Overfull \hbox (15.43002pt too wide) in paragraph at lines 145--146
 \T1/aer/m/n/10 which you can ac-cess by typ-ing on-Web("syn375517") or nav-i-ga
 t-ing to synapse.sagebase.org/#Synapse:syn375517.
  []
@@ -386,7 +386,7 @@ ic/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
 b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/shar
 e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsltt10.pfb></usr/share/texmf-t
 exlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on metabricCompetitionDemo.pdf (4 pages, 114989 bytes).
+Output written on metabricCompetitionDemo.pdf (4 pages, 115216 bytes).
 PDF statistics:
  92 PDF objects out of 1000 (max. 8388607)
  15 named destinations out of 1000 (max. 500000)
