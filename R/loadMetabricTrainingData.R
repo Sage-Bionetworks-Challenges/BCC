@@ -64,7 +64,8 @@ Please visit https://synapse.sagebase.org/#Synapse:syn1125612 and click the
     exprData = 'Training METABRIC Gene Expression Data',
     copyData = 'Training METABRIC Copy Number Data',
     clinicalFeaturesData = 'Training METABRIC Clinical Features Data',
-    clinicalSurvData = 'Training METABRIC Clinical Survival Data'
+    clinicalSurvData = 'Training METABRIC Clinical Survival Data',
+    clinicalSurvData_ds = 'Training METABRIC Clinical Survival Data (Disease Specific)'
   )
 
   ## initialize return value
