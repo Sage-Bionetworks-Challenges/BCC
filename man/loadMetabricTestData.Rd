@@ -25,6 +25,6 @@
   dataset used to evlauate model scores.
 }
 \author{
-  Adam Margolin
+  Adam Margolin, Erhan Bilal
 }
 

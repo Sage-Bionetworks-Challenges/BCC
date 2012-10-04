@@ -18,6 +18,6 @@
   dataset used to train predicitve models.
 }
 \author{
-  Adam Margolin
+  Adam Margolin, Matt Furia, Erhan Bilal
 }
 
