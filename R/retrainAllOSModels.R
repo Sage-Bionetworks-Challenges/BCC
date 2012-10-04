@@ -13,6 +13,6 @@ retrainAllOSModels <- function(){
   for (modelCtr in 1:nrow(submittedModelIds_orig)){
     curModelId_orig <- submittedModelIds_orig$entity.id[modelCtr]
     print(paste("Retraining", modelCtr, "of", nrow(submittedModelIds_orig), ":", curModelId_orig))
-    retrainOSModel(curModelId_orig)
+    try( retrainOSModel(curModelId_orig) )
   }
 }
