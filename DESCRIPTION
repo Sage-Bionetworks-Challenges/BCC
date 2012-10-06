@@ -29,4 +29,6 @@ Collate:
     'restoreSessionAndCreateNewModelFromOSModel.R'
     'retrainAllOSModels.R'
     'retrainOSModel.R'
+    'loadMetabricTestData_federation.R'
+    'loadMetabricTrainingData_federation.R'
 Packaged: 2012-09-20 19:18:16 UTC; sagebio
